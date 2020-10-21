@@ -1,9 +1,11 @@
-package com.sbnri.assignment
+package com.sbnri.assignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.sbnri.assignment.ui.main.MainFragment
+import com.sbnri.assignment.R
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitNow()
         }
     }
 }

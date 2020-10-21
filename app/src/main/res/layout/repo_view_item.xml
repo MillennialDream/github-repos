@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:background="@android:color/white"
+    android:paddingHorizontal="@dimen/margin_large"
+    android:paddingTop="@dimen/margin_large"
+    tools:ignore="UnusedAttribute">
+
+    <TextView
+        android:id="@+id/repo_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/titleColor"
+        android:textSize="@dimen/repo_name_size"
+        app:layout_constraintEnd_toStartOf="@id/repo_license"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="github-repo" />
+
+    <TextView
+        android:id="@+id/repo_license"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:background="@android:color/darker_gray"
+        android:includeFontPadding="false"
+        android:padding="@dimen/padding_small"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/license_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="MIT License" />
+
+    <TextView
+        android:id="@+id/repo_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="10"
+        android:paddingVertical="@dimen/margin_large"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="@dimen/repo_description_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repo_name"
+        tools:text="A collection of samples to discuss and showcase different architectural tools and patterns for Android apps." />
+
+    <ImageView
+        android:id="@+id/open_issues"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_small"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/repo_open_issue_count"
+        app:layout_constraintEnd_toStartOf="@+id/repo_open_issue_count"
+        app:layout_constraintTop_toTopOf="@+id/repo_open_issue_count"
+        app:tint="?attr/colorControlNormal" />
+
+    <TextView
+        android:id="@+id/repo_open_issue_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repo_description"
+        tools:text="300" />
+
+    <TextView
+        android:id="@+id/repo_permissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_medium"
+        android:text="@string/repo_permissions"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repo_description" />
+
+    <TextView
+        android:id="@+id/repo_permission_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_small"
+        android:paddingVertical="@dimen/padding_medium"
+        android:text="@string/repo_permission_admin"
+        app:layout_constraintBottom_toBottomOf="@id/repo_permissions"
+        app:layout_constraintStart_toEndOf="@id/repo_permissions"
+        app:layout_constraintTop_toTopOf="@id/repo_permissions" />
+
+    <TextView
+        android:id="@+id/repo_permission_push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_small"
+        android:paddingVertical="@dimen/padding_medium"
+        android:text="@string/repo_permission_push"
+        app:layout_constraintBottom_toBottomOf="@id/repo_permissions"
+        app:layout_constraintStart_toEndOf="@id/repo_permission_admin"
+        app:layout_constraintTop_toTopOf="@id/repo_permissions" />
+
+    <TextView
+        android:id="@+id/repo_permission_pull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_small"
+        android:paddingVertical="@dimen/padding_medium"
+        android:text="@string/repo_permission_pull"
+        app:layout_constraintBottom_toBottomOf="@id/repo_permissions"
+        app:layout_constraintStart_toEndOf="@id/repo_permission_push"
+        app:layout_constraintTop_toTopOf="@id/repo_permissions" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/permissions_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="repo_permissions,repo_permission_admin,repo_permission_push, repo_permission_pull" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">SBNRI Assignment</string>
+    <string name="app_name">Github Repos</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+    <string name="repo_permissions">Permissions: </string>
+    <string name="repo_permission_admin">Admin</string>
+    <string name="repo_permission_push">Push</string>
+    <string name="repo_permission_pull">Pull</string>
+    <string name="no_results">No results 😓</string>
 </resources>
