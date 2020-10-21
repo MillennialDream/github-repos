@@ -1,6 +1,7 @@
 package com.sbnri.assignment.adapter
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -15,7 +16,7 @@ class RepoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(repo: Repo) {
 
-        this.itemView.context.resources
+        val resources = this.itemView.context.resources
 
         itemView.repo_name.text = repo.name
 
@@ -37,14 +38,14 @@ class RepoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val permissions = repo.permissions
         if (permissions != null) {
 
-            itemView.permissions_group.visibility = View.VISIBLE
+            itemView.repo_permissions.visibility = View.VISIBLE
 
             itemView.repo_permission_admin.isVisible = permissions.admin
             itemView.repo_permission_push.isVisible = permissions.push
             itemView.repo_permission_pull.isVisible = permissions.pull
 
         } else {
-            itemView.permissions_group.visibility = View.GONE
+            itemView.repo_permissions.visibility = View.GONE
         }
 
         itemView.setOnClickListener {
